@@ -2,11 +2,9 @@ class Deck
 {
     public static final int MAX_SIZE = 52
     private def cards = []
-    private def is21 = false
 
-    public Deck(is21 = false)
+    public Deck()
     {
-        this.is21 = is21
         reset()
     }
     
@@ -23,7 +21,7 @@ class Deck
     {
         for (int i = 2; i <= Card.ACE; i++)
         {
-            Card newCard = is21 ? new TwentyOneCard(i, suit) : new Card(i, suit)
+            Card newCard = new Card(i, suit)
             cards.add(newCard)
         }
     }
